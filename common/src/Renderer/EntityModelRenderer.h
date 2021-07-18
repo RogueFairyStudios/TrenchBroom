@@ -82,6 +82,7 @@ namespace TrenchBroom {
             }
 
             void addEntity(Model::EntityNode* entityNode);
+            void removeEntity(Model::EntityNode* entityNode);
             void updateEntity(Model::EntityNode* entityNode);
             void clear();
 

@@ -64,6 +64,12 @@ namespace TrenchBroom {
             }
         }
 
+        void EntityModelRenderer::removeEntity(Model::EntityNode* entityNode) {
+            auto it = m_entities.find(entityNode);
+            assert(it != m_entities.end());
+            m_entities.erase(it);
+        }
+
         void EntityModelRenderer::updateEntity(Model::EntityNode* entityNode) {
             const auto modelSpec = Assets::safeGetModelSpecification(m_logger, entityNode->entity().classname(), [&]() {
                 return entityNode->entity().modelSpecification();
